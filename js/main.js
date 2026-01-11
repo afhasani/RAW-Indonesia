@@ -31,8 +31,10 @@
     $(window).scroll(function () {
         if ($(this).scrollTop() > 300) {
             $('.back-to-top').fadeIn('slow');
+            $('.whatsapp-floating').fadeIn('slow');
         } else {
             $('.back-to-top').fadeOut('slow');
+            $('.whatsapp-floating').fadeOut('slow');
         }
     });
     $('.back-to-top').click(function () {

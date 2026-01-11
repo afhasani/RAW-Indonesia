@@ -39,6 +39,14 @@ h6,
     z-index: 99;
 }
 
+.whatsapp-floating {
+    position: fixed;
+    display: none;
+    right: 30px;
+    bottom: 90px;
+    z-index: 99;
+}
+
 
 /*** Spinner ***/
 #spinner {
@@ -284,6 +292,26 @@ h6,
     color: var(--light);
 }
 
+
+/* Style Dasar (Untuk Layar HP / Mobile) */
+.home-img {
+    width: 100%;
+    object-fit: cover; /* Wajib: agar gambar tidak gepeng saat di-crop */
+    height: 150px;     /* Tinggi lebih kecil untuk HP agar proporsional */
+}
+
+/* Untuk Tablet (Layar > 768px) */
+@media (min-width: 768px) {
+    .home-img {
+        height: 250px; /* Tinggi kembali ke 250px seperti request awal */
+    }
+}
+
+.gallery {
+    height:50px;
+    width: 100%;
+    object-fit: cover;
+}
 
 /*** Facts ***/
 .fact-item {
