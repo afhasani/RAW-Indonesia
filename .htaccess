@@ -1,1 +1,11 @@
 ErrorDocument 404 /404.html
+RewriteEngine On
+
+# 1. Jika user mengetik /file.html, redirect paksa ke /file (untuk SEO agar tidak duplikat)
+RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
+RewriteRule ^ /%1 [NC,L,R]
+
+# 2. Jika user mengetik /file, server diam-diam mengambil /file.html
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html [NC,L]
